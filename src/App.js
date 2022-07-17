@@ -30,10 +30,9 @@ class App extends React.Component {
     this.subscription = this.cable.subscriptions.create({
       channel: "LogMonitorChannel",
     }, {
-      connected: () => {console.log('WS connected')},
-      disconnected: () => {console.log('WS disconnected')},
+      connected: () => {},
+      disconnected: () => {},
       received: data => {
-        console.log(data);
         this.handleData(data);
       }
     })
